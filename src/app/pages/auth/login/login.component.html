@@ -1,0 +1,51 @@
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="alert alert-danger" *ngIf="error">
+              <p>{{error}}</p>
+            </div>
+            <div *ngIf="isLoading" style="text-align: center;">
+              <app-spinner></app-spinner>
+            </div>
+              <div class="card">
+                  <div class="card-header">Login</div>
+                  <div class="card-body">
+                    <form (ngSubmit)="onSubmit(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+
+                      <div class="form-group row">
+                        <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                        <div class="col-md-6">
+                            <input type="text" id="email" class="form-control" ngModel name="email" email required autofocus>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                        <div class="col-md-6">
+                            <input
+                              type="password"
+                              id="password"
+                              class="form-control"
+                              ngModel
+                              name="password"
+                              required>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-md-6 offset-md-4">
+                              <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+                        </div>
+                      </div>
+
+                  <div class="col-md-6 offset-md-4">
+                    <a routerLink="/register" class="btn btn-link">Register</a>
+                    <a routerLink="/reset" class="btn btn-link">Reset Your Password?</a>
+                 </div>
+
+              </form>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>

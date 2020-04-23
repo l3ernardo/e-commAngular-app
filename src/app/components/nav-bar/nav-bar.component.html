@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div>
+    <a class="navbar-brand" routerLink="#">Navbar
+
+    </a>
+  </div>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="nav navbar-nav">
+      <li routerLinkActive="active"><a class="nav-link" routerLink="/">Home</a></li>
+      <li routerLinkActive="active"><a class="nav-link" routerLink="/login" *ngIf="!userIsAuthenticated">Login</a></li>
+      <li *ngIf="userIsAuthenticated">
+        <button mat-button (click)="onLogout()">Logout</button>
+      </li>
+    </ul>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+
+
+<!--
+add cursor style on pointer
+
+e.g <li><a style:"cursor: pointer;">teste</a></li>
+
+-->
